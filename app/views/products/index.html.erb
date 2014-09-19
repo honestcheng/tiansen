@@ -1,0 +1,50 @@
+<div id='content' style='width:1002px;height:635px;background:url("<%=  asset_path 'tiansen/cbg.png' %>");margin:0px auto'>
+       <%= render_cell :page, :show_nav %>
+    
+    <%= render_cell :page, :show_company_info%>
+    
+    <%= render_cell :page, :show_products_info%>
+    
+    <div id="pdv_14224" class="pdv_class" title="" style="width: 722px; height: 380px; top: 73px; left: 254px; z-index: 11;">
+        <div id="spdv_14224" class="pdv_content" style="overflow:visible;width:100%;">
+            <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+    	        <div style="height:25px;margin:1px;display:none;background:;">
+    		        <div style="float:left;margin-left:12px;line-height:25px;font-weight:bold;color:">	</div>
+    		        <div style="float:right;margin-right:10px;display:none">
+    		            <a href="-1" style="line-height:25px;color:">更多</a>
+    		        </div>
+    	        </div>
+                <div style="padding:0px">
+                    <% @products.each do |product| %>
+                    <div class="productquery_dolphin">
+                        <div class="productquery_dolphin_top">
+    		                <div class="fang" style="width:160px;height:120px">
+    		                    <div class="picFit" style="width:160px;height:120px">
+    		                        <a href="<%= product.pic_path %>" target="_blank"><img src="<%= product.pic_path %>!prodlist" style="height: 120px;" border="0"></a>
+    	                        </div>
+    		                </div>
+    	                </div>
+    	                <div class="productquery_dolphin_bottom">
+    		                <a href="/products/<%= product.id %>" target="_self" class="prodtitle"><%= product.name %></a>
+    	                </div>
+                    </div>
+                    <% end %>
+                    <!--
+                    <div id="showpages">
+    	                <div id="pagesinfo">共8条 每页20条 页次：1/1</div>
+    	                <div id="pages">
+                            <ul>
+                                <li class="pbutton"><a href="/1364465091/product/class/index.php?page=1&amp;catid=0&amp;myord=uptime&amp;myshownums=&amp;showtj=&amp;author=&amp;key=">首页</a></li>
+                                <li class="pbutton">上一页</li>
+                                <li class="pagesnow">1</li>
+                                <li class="pbutton">下一页</li>
+                                <li class="pbutton"><a href="/1364465091/product/class/index.php?page=1&amp;catid=0&amp;myord=uptime&amp;myshownums=&amp;showtj=&amp;author=&amp;key=">尾页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

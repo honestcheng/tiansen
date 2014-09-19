@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @category], :url => @url do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :position %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <%= f.input :categoryable_type, as: :hidden%>
+<% end %>
+

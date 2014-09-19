@@ -1,0 +1,33 @@
+<div id='content' style='width:1002px;height:635px;background:url("<%=  asset_path 'tiansen/cbg.png' %>");margin:0px auto'>
+   <%= render_cell :page, :show_nav %>
+    
+    <%= render_cell :page, :show_company_info%>
+    
+    <%= render_cell :page, :show_products_info%>
+
+    <div id="pdv_14293" class="pdv_class" title="" style="width: 693px; height: 262px; top: 80px; left: 266px; z-index: 12;">
+        <div id="spdv_14293" class="pdv_content" style="overflow:visible;width:100%;">
+            <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+    	        <div style="height:25px;margin:1px;display:none;background:;">
+    		        <div style="float:left;margin-left:12px;line-height:25px;font-weight:bold;color:">	
+    		        </div>
+    		        <div style="float:right;margin-right:10px;display:none">
+    		            <a href="-1" style="line-height:25px;color:">更多</a>
+    		        </div>
+    	        </div>
+                <div style="padding:0px">
+                    <div id="newscontent">
+    	                <div class="newstitle"><%= @news.title %></div>
+    	                <div class="info">
+                            作者：管理员 &nbsp;&nbsp; 发布于：<%= l(@news.updated_at, :format => :medium) %> &nbsp;&nbsp; 
+                        </div>
+    	                <div id="memo" class="memo" style="display:block"><span style="color:#ff6600">摘要：</span><%= @news.sub_title %></div>
+    	                <div id="con" class="con"><div id="con" class="con">
+                            <%= raw @news.content %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

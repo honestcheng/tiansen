@@ -1,0 +1,32 @@
+default: &default
+  system_email: "zero.ryanlee@gmail.com"
+  email_sender: "zero.ryanlee@gmail.com"
+  memcached:
+    servers: ["127.0.0.1:11211"]
+    namespace: "tiansen"
+  upyun:
+    username: 2testimg
+    password: 2testimg
+    bucket: twotestimg
+    bucket_domain: tiansen-img.b0.upaiyun.com
+  company:
+    name: 南阳天森肥业有限公司
+    home_title: 天森首页
+    about_us: > 
+      南阳天森肥业有限公司位于南阳玉都镇平遮山工业经济开发区，是一座现代化的复合肥生产企业。公司占地面积36900平方米，一期工程建筑面积16800平方米。注册资金1000万元。公司紧邻沪陕、二广高速公路，宁西、焦柳铁路、312国道临壤而过，交通十分便利。
+      公司现有员工200余人。高级复合肥生产技术专家5人，高级工程师2人，农业技术专家3人。企业内部管理体系完善，已通过ISO9001:2008国际质量体系认证。
+    
+    
+development:
+  <<: *default
+  
+test:
+  <<: *default
+
+production:
+  <<: *default
+  upyun:
+    username: 2prodimg
+    password: 2prodimg
+    bucket: twoprodimg
+    bucket_domain: twoprodimg.b0.upaiyun.com

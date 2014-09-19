@@ -1,0 +1,39 @@
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_admin_product_path(@product), :class => "btn btn-small btn-success" %>
+  <%= link_to '返回', admin_products_path, :class => "btn btn-small" %>
+</div>
+<div id="admin_product">
+    <p>
+    <b>Name:</b>
+    <%= @product.name %>
+  </p>
+    <p>
+    <b>Category:</b>
+    <%= @product.category_id %>
+  </p>
+    <p>
+    <b>Model:</b>
+    <%= @product.model %>
+  </p>
+    <p>
+    <b>Price:</b>
+    <%= @product.price %>
+  </p>
+    <p>
+    <b>Description:</b>
+    <%= @product.description %>
+  </p>
+    <p>
+    <b>Pic path:</b>
+    <%= @product.pic_path %>
+  </p>
+    <p>
+    <b>Position:</b>
+    <%= @product.position %>
+  </p>
+    <p>
+    <b>Content:</b>
+    <%= @product.content %>
+  </p>
+  </div>

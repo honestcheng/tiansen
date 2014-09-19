@@ -1,0 +1,35 @@
+<%= render 'base' %>
+<h1><%= t("activerecord.models.news") %></h1>
+<div id="admin_news">
+  <table class="table table-bordered table-striped table-condensed">
+    <tr class="head">
+      <td>编号</td>
+      <td><%= t("activerecord.attributes.news.title") %></td>
+      <td><%= t("activerecord.attributes.news.sub_title") %></td>
+      <td><%= t("activerecord.attributes.news.published_at") %></td>
+      <td><%= t("activerecord.attributes.news.category_id") %></td>
+      <td><%= t("activerecord.attributes.news.position") %></td>
+      <td>创建时间</td>
+      <td class="opts"></td>
+    </tr>
+    <% @news.each do |item| %>
+    <tr class="<%= cycle("","even") %>">
+      <td><%= item.id %></td>
+      <td><%= item.title %></td>
+      <td><%= item.sub_title %></td>
+      <td><%= item.published_at %></td>
+      <td><%= item.category_id %></td>
+      <td><%= item.position %></td>
+      <td><%= l(item.created_at, :format => :long) %></td>
+      <td>
+          <%= link_to "查看", admin_news_path(item.id), :class => "icon small_edit" %>
+        <%= link_to "编辑", edit_admin_news_path(item.id), :class => "icon small_edit" %>
+        <%= link_to "删除", admin_news_path(item.id), :method => :delete, 'data-confirm' => '确定要删除吗?', :class => "icon small_delete" %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<div class="tools">
+  <a href="<%= new_admin_news_path %>" class="btn btn-small btn-success">新建</a>
+</div>

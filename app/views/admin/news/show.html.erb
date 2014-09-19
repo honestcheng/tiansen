@@ -1,0 +1,31 @@
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_admin_news_path(@news), :class => "btn btn-small btn-success" %>
+  <%= link_to '返回', admin_news_index_path, :class => "btn btn-small" %>
+</div>
+<div id="admin_news">
+    <p>
+    <b>Title:</b>
+    <%= @news.title %>
+  </p>
+    <p>
+    <b>Sub title:</b>
+    <%= @news.sub_title %>
+  </p>
+    <p>
+    <b>Published at:</b>
+    <%= @news.published_at %>
+  </p>
+    <p>
+    <b>Category:</b>
+    <%= @news.category_id %>
+  </p>
+    <p>
+    <b>Position:</b>
+    <%= @news.position %>
+  </p>
+    <p>
+    <b>Content:</b>
+    <%= raw @news.content %>
+  </p>
+  </div>

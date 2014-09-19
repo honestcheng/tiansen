@@ -1,0 +1,37 @@
+<!-- 空白边框 -->
+<div id='pdv_14540' class='pdv_class'  title='最新动态' style='width:240px;height:43px;top:0px;left:742px; z-index:14'>
+    <div id='spdv_14540' class='pdv_content' style='overflow:hidden;width:100%;height:100%'>
+        <div class="pdv_border" style="border:0px;height:100%;padding:0;margin:0;">
+            <div style="height:38px;border:0px;padding:0;margin:0;background:url(<%= asset_path('tiansen/title.png') %>) repeat-x">
+                <div style="float:left;text-align:left;padding:0 0 0 18px;font:12px/38px Verdana,microsoft yahei,Arial;color:#fff;">
+                    最新动态
+	            </div>
+		        <div style="float:right;width:50px;height:38px;margin-right:5px"><a href="/news" style="display:inline;"><img src="<%= asset_path('tiansen/more.png') %>" style="border:0px;margin-top:16px"></a></div>
+            </div>
+            <div style="margin:0px;padding:0px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--新闻-->
+<div id='pdv_14476' class='pdv_class'  title='' style='width:228px;height:161px;top:60px;left:750px; z-index:12'>
+    <div id='spdv_14476' class='pdv_content' style='overflow:hidden;width:100%;height:100%'>
+        <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+	        <div style="height:25px;margin:1px;display:none;background:;">
+		        <div style="float:left;margin-left:12px;line-height:25px;font-weight:bold;color:"></div>
+		        <div style="float:right;margin-right:10px;display:inline">
+		            <a href="/news" style="line-height:25px;color:">更多</a>
+		        </div>
+	        </div>
+            <div style="padding:0px">
+                <ul class="newslist_time">
+                    <% @news.each do |news| %>
+                    <li class="newslist_time"><div class="time"><%= l(news.updated_at, :format => :medium) %></div><a href="/news/<%= news.id %>" target="_self" class="newslist_time"   ><%= news.title %></a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

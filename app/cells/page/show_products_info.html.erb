@@ -1,0 +1,21 @@
+    <!-- 产品二级分类 -->
+    <div id='pdv_14546' class='pdv_class'  title='产品分类' style='width:199px;height:414px;top:0px;left:21px; z-index:17'>
+        <div id='spdv_14546' class='pdv_content' style='overflow:hidden;width:100%;height:100%'>
+            <div class="pdv_border" style="border:0px;height:100%;padding:0;margin:0;">
+                <div style="height:38px;border:0px;padding:0;margin:0;background:url(<%= asset_path('tiansen/title.png') %>) repeat-x">
+                    <div style="float:left;text-align:left;padding:0 0 0 18px;font:12px/38px Verdana,microsoft yahei,Arial;color:#fff;">
+    	                产品分类
+    	            </div>
+    		        <div style="float:right;width:50px;height:38px;margin-right:5px"><a href="/products" style="display:none;"><img src="<%= asset_path('tiansen/more.png')%>" style="border:0px;margin-top:16px"></a></div>
+                </div>
+                <div style="margin:0px;padding:0px;">
+                    <div class="producttwoclass">
+                        <div class="producttwoclass_top"><a href="/products">所有</a></div>
+                        <% @categories.each do |category| %>
+                        <div class="producttwoclass_top"><a href="<%= category_products_path(category.id)%>" target="_self" ><%= category.name %></a> </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

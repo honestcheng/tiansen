@@ -1,0 +1,19 @@
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_admin_page_path(@page), :class => "btn btn-small btn-success" %>
+  <%= link_to '返回', admin_pages_path, :class => "btn btn-small" %>
+</div>
+<div id="admin_page">
+    <p>
+    <b>Title:</b>
+    <%= @page.title %>
+  </p>
+    <p>
+    <b>Permalink:</b>
+    <%= @page.permalink %>
+  </p>
+    <p>
+    <b>Content:</b>
+    <%= @page.content %>
+  </p>
+  </div>

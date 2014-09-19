@@ -1,0 +1,40 @@
+<!-- 空白边框 -->
+<div id='pdv_14542' class='pdv_class'  title='联系我们' style='width:199px;height:42px;top:417px;left:21px; z-index:16'>
+    <div id='spdv_14542' class='pdv_content' style='overflow:hidden;width:100%;height:100%'>
+        <div class="pdv_border" style="border:0px;height:100%;padding:0;margin:0;">
+            <div style="height:38px;border:0px;padding:0;margin:0;background:url(<%= asset_path('tiansen/title.png') %>) repeat-x">
+                <div style="float:left;text-align:left;padding:0 0 0 18px;font:12px/38px Verdana,microsoft yahei,Arial;color:#fff;">
+	                联系我们
+	            </div>
+		        <div style="float:right;width:50px;height:38px;margin-right:5px"><a href="" style="display:none;"><img src="<%= asset_path('tiansen/more.png') %>" style="border:0px;margin-top:16px"></a></div>
+            </div>
+            <div style="margin:0px;padding:0px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--联系方式-->
+<div id='pdv_14482' class='pdv_class'  title='多行文字' style='width:179px;height:170px;top:463px;left:38px; z-index:13'>
+    <div id='spdv_14482' class='pdv_content' style='overflow:hidden;width:100%;height:100%'>
+        <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+	        <div style="height:25px;margin:1px;display:none;background:;">
+		        <div style="float:left;margin-left:12px;line-height:25px;font-weight:bold;color:">
+		            多行文字
+		        </div>
+		        <div style="float:right;margin-right:10px;display:none">
+		            <a href="-1" style="line-height:25px;color:">更多</a>
+		        </div>
+	        </div>
+            <div style="padding:0px">
+                <div style="padding:5px 0px 2px 0px;color:#fff;font:12px/23px simsun, Arial, Helvetica, sans-serif;">地址：<%= @company.location %><br />
+                电话：<%= @company.tel %><br />
+                联系人： <%= @company.linkman %><br/>
+                邮箱：<%= @company.email %><br />
+                QQ：<%= @company.fax %>
+            </div>    
+            </div>
+        </div>
+    </div>
+</div>

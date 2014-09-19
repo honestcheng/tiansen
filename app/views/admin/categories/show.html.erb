@@ -1,0 +1,15 @@
+<%= render 'base' %>
+<div class="tools">
+  <%= link_to '修改', edit_admin_category_path(@category), :class => "btn btn-small btn-success" %>
+  <%= link_to '返回', admin_categories_path, :class => "btn btn-small" %>
+</div>
+<div id="admin_category">
+    <p>
+    <b>Name:</b>
+    <%= @category.name %>
+  </p>
+    <p>
+    <b>Position:</b>
+    <%= @category.position %>
+  </p>
+  </div>

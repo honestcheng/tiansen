@@ -1,0 +1,23 @@
+<%
+def generate_simple_form_for(table_name)
+    if(table_name.include?('admin_') || table_name.include?('cpanel_'))
+        arr = table_name.split('_')
+        "[:#{arr[0]}, @#{(arr - [arr[0]]).join('_')} ]"
+    else
+        "@#{table_name}"
+    end
+end
+%>
+<%%= simple_form_for <%= generate_simple_form_for(singular_table_name) %> do |f| %>
+  <%%= f.error_notification %>
+
+  <div class="form-inputs">
+  <%- attributes.each do |attribute| -%>
+    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+  <%- end -%>
+  </div>
+
+  <div class="form-actions">
+    <%%= f.button :submit %>
+  </div>
+<%% end %>

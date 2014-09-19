@@ -1,0 +1,58 @@
+<div id='content' style='width:1002px;height:635px;background:url("<%=  asset_path 'tiansen/cbg.png' %>");margin:0px auto'>
+   <%= render_cell :page, :show_nav %>
+    
+    <%= render_cell :page, :show_company_info%>
+    
+    <%= render_cell :page, :show_products_info%>
+    
+    <div id="pdv_14251" class="pdv_class" title="产品详情" style="width: 716px; height: 401px; top: 76px; left: 252px; z-index: 11;">
+        <div id="spdv_14251" class="pdv_content" style="overflow:visible;width:100%;">
+            <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
+    	        <div style="height:25px;margin:1px;display:none;background:;">
+    		        <div style="float:left;margin-left:12px;line-height:25px;font-weight:bold;color:">
+    		            产品详情
+    		        </div>
+    		        <div style="float:right;margin-right:10px;display:none">
+    		            <a href="-1" style="line-height:25px;color:">更多</a>
+    		        </div>
+    	        </div>
+                <div style="padding:0px">
+                    <div id="productcontent">
+    	                <div class="productpics">
+    		                <div class="piczone">
+    			                <table align="center" cellpadding="0" cellspacing="0">
+    		                        <tbody><tr>
+    			                        <td align="center">
+    			                            <div id="productview">
+                                                <!--
+    				                            <img src="../../product/templates/images/loading.gif" border="0" id="productloading" class="productloading" style="display: none;">
+                                                -->
+    			                                <img id="productpic" class="productpic" src="<%= @product.pic_path %>!prodinfo"></div>
+    			                                
+                                            </td>
+    			                        </tr>
+    			                    </tbody>
+                                </table>
+    		                </div>
+    		                <div id="contentpages" style="display: none;"><ul></ul><li id="pl" class="cbutton">上一张</li><li id="p_0" class="pages">1</li><li id="pn" class="pbutton">下一张</li></div>
+    	                </div>
+    	                <div class="introzone">
+    		                <div id="prodtitle"><%= @product.name %></div>
+    		                <div id="prop">
+                                型号：<%= @product.model %><br>
+                            </div>
+    		                <div id="memo" class="memo" style="display:block"><%= @product.description %></div>
+    	                </div>
+    	                <div class="bodyzone">
+                            <%= raw @product.content %>
+                         </div>
+    	                <div class="bzone">
+    	                    <input type="hidden" id="productid" value="82"> 
+    	                    <div id="banzhu" class="banzhu" style="display: none;"></div>
+    	                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

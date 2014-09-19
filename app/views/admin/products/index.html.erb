@@ -1,0 +1,40 @@
+<%= render 'base' %>
+<h1><%= t("activerecord.models.product") %></h1>
+<div id="admin_products">
+  <table class="table table-bordered table-striped table-condensed">
+    <tr class="head">
+      <td>编号</td>
+      <td><%= t("activerecord.attributes.product.name") %></td>
+      <td><%= t("activerecord.attributes.product.category_id") %></td>
+      <td><%= t("activerecord.attributes.product.model") %></td>
+      <td><%= t("activerecord.attributes.product.price") %></td>
+      <td><%= t("activerecord.attributes.product.description") %></td>
+      <td><%= t("activerecord.attributes.product.pic_path") %></td>
+      <td><%= t("activerecord.attributes.product.position") %></td>
+      <td><%= t("activerecord.attributes.product.content") %></td>
+      <td>创建时间</td>
+      <td class="opts"></td>
+    </tr>
+    <% @products.each do |item| %>
+    <tr class="<%= cycle("","even") %>">
+      <td><%= item.id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.category_id %></td>
+      <td><%= item.model %></td>
+      <td><%= item.price %></td>
+      <td><%= item.description %></td>
+      <td><%= item.pic_path %></td>
+      <td><%= item.position %></td>
+      <td><%= item.content %></td>
+      <td><%= l(item.created_at, :format => :long) %></td>
+      <td>
+        <%= link_to "", edit_admin_product_path(item.id), :class => "icon small_edit" %>
+        <%= link_to "", admin_product_path(item.id), :method => :delete, 'data-confirm' => '确定要删除吗?', :class => "icon small_delete" %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<div class="tools">
+  <a href="<%= new_admin_product_path %>" class="btn btn-small btn-success">新建</a>
+</div>
